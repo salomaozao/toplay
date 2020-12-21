@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 
+import styles from "./styles/styles";
 import FormComponent from "./components/formComponent";
 // import styles from "./styles/styles";
 
@@ -44,25 +45,66 @@ const cadastro = (props) => {
 					style={{
 						backgroundColor: "black",
 						display: showingComp[0] ? "flex" : "none",
+						backgroundColor: styles.
 					}}
+					content={[
+						{
+							title: "Nome",
+							placeholder: "EXEMPLO DE NOME",
+						},
+						{
+							title: "email",
+							placeholder: "EXEMPLO DE RG",
+						},
+					]}
 				></FormComponent>
 				<FormComponent
 					style={{
 						backgroundColor: "green",
 						display: showingComp[1] ? "flex" : "none",
 					}}
+					content={[
+						{
+							title: "Senha",
+							placeholder: "EXEMPLO DE NOME",
+						},
+						{
+							title: "Verificar",
+							placeholder: "EXEMPLO DE RG",
+						},
+					]}
 				></FormComponent>
 				<FormComponent
 					style={{
 						backgroundColor: "pink",
 						display: showingComp[2] ? "flex" : "none",
 					}}
+					content={[
+						{
+							title: "CPF",
+							placeholder: "EXEMPLO DE NOME",
+						},
+						{
+							title: "SLA",
+							placeholder: "EXEMPLO DE RG",
+						},
+					]}
 				></FormComponent>
 				<FormComponent
 					style={{
 						backgroundColor: "purple",
 						display: showingComp[3] ? "flex" : "none",
 					}}
+					content={[
+						{
+							title: "hihi",
+							placeholder: "EXEMPLO DE NOME",
+						},
+						{
+							title: "huhu",
+							placeholder: "EXEMPLO DE RG",
+						},
+					]}
 				></FormComponent>
 			</View>
 			<Button onPress={nextForm} title={"Próximo"}></Button>

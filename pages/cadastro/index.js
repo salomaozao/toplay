@@ -37,7 +37,7 @@ const cadastro = (props) => {
 				{
 					height: useWindowDimensions().height,
 					flexDirection: "column",
-					justifyContent: "space-between",
+					justifyContent: 'space-between',
 				})
 			}
 		>

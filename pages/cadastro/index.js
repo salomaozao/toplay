@@ -38,16 +38,15 @@ const cadastro = (props) => {
 
 	return (
 		<View
-			style={
-				([styles.bgPrimary],
+			style={[
+				styles.bgPrimary,
 				{
-					backgroundColor: "black",
 					height: height,
 					flexDirection: "column",
 					justifyContent: "space-between",
 					alignItems: "stretch",
-				})
-			}
+				},
+			]}
 		>
 			<View style={styles.bgPrimary}>
 				<Header />
@@ -58,6 +57,11 @@ const cadastro = (props) => {
 							display: showingComp[0] ? "flex" : "none",
 						}}
 						content={[
+							{
+								mainTitle: "Texto demonstrativo, 10 palavras",
+								desc:
+									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus. ",
+							},
 							{
 								title: "Nome",
 								placeholder: "EXEMPLO DE NOME",
@@ -74,6 +78,11 @@ const cadastro = (props) => {
 						}}
 						content={[
 							{
+								mainTitle: "Texto demonstrativo, 20 palavras",
+								desc:
+									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare volutpat velit nec laoreet. Morbi mattis scelerisque augue. Nullam imperdiet. ",
+							},
+							{
 								title: "Senha",
 								placeholder: "EXEMPLO DE NOME",
 							},
@@ -89,6 +98,10 @@ const cadastro = (props) => {
 						}}
 						content={[
 							{
+								mainTitle: "Bem vindo!",
+								desc: "Frases pequenas!",
+							},
+							{
 								title: "CPF",
 								placeholder: "EXEMPLO DE NOME",
 							},
@@ -103,6 +116,10 @@ const cadastro = (props) => {
 							display: showingComp[3] ? "flex" : "none",
 						}}
 						content={[
+							{
+								mainTitle: "Bem vindo!",
+								desc: "Bora pro play?",
+							},
 							{
 								title: "hihi",
 								placeholder: "EXEMPLO DE NOME",

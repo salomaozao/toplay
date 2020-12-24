@@ -15,6 +15,12 @@ var styles = StyleSheet.create({
 
 	my4: { marginVertical: 16 },
 
+	mt2 : { marginTop: 8 },
+
+	mt4: { marginTop: 16 },
+
+	mb4: { marginBottom: 16 },
+
 	borderLight: { borderColor: "gray" /*MUDAR COR*/ },
 
 	borderDark: { borderColor: "black" /*MUDAR COR*/ },
@@ -39,7 +45,7 @@ var styles = StyleSheet.create({
 
 	textSecondary: { color: "white" /*MUDAR COR*/ },
 
-	title: { fontSize: 24 },
+	title: { fontSize: 24, fontWeight: "800" },
 
 	small: { fontSize: 8 /*AJUSTAR?*/ },
 

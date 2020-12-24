@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Button, useWindowDimensions } from "react-native";
+import { View, Button, Dimensions, StatusBar, Platform } from "react-native";
 
 import Header from "./components/header";
 import FormComponent from "./components/formComponent";
@@ -30,14 +30,22 @@ const cadastro = (props) => {
 		}
 	};
 
+	var height =
+		Dimensions.get("window").height +
+		(Platform.OS === "android" && Platform.Version > 26
+			? +StatusBar.currentHeight
+			: 0);
+
 	return (
 		<View
 			style={
 				([styles.bgPrimary],
 				{
-					height: useWindowDimensions().height,
+					backgroundColor: "black",
+					height: height,
 					flexDirection: "column",
-					justifyContent: 'space-between',
+					justifyContent: "space-between",
+					alignItems: "stretch",
 				})
 			}
 		>
@@ -107,9 +115,7 @@ const cadastro = (props) => {
 					></FormComponent>
 				</View>
 			</View>
-			<View>
-				<Button onPress={updateForm} title={"Próximo"}></Button>
-			</View>
+			<Button onPress={updateForm} title={"Próximo"}></Button>
 		</View>
 	);
 };

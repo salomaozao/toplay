@@ -1,11 +1,10 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet, CheckBox } from "react-native";
-import styles from "../../../styles/styles"
+import { View, Text, TextInput, CheckBox } from "react-native";
+import styles from "../../../styles/styles";
 
-const formCheck = (props) => (
+const formCheck = () => (
 	<View>
-		<Text>{props.children}:</Text>
-		<CheckBox />
+		<CheckBox val/>
 	</View>
 );
 

@@ -15,7 +15,7 @@ var styles = StyleSheet.create({
 
 	my4: { marginVertical: 16 },
 
-	mt2 : { marginTop: 8 },
+	mt2: { marginTop: 8 },
 
 	mt4: { marginTop: 16 },
 
@@ -43,7 +43,7 @@ var styles = StyleSheet.create({
 		borderTopWidth: 1,
 	},
 
-	textSecondary: { color: "white" /*MUDAR COR*/ },
+	textSecondary: { color: "black" /*MUDAR COR*/ },
 
 	title: { fontSize: 24, fontWeight: "800" },
 
@@ -55,13 +55,13 @@ var styles = StyleSheet.create({
 
 	centerY: { justifyContent: "center" },
 
-	bottomAbs: {
-		flex: 1,
-	},
+	bottomAbs: { flex: 1 },
 
-	w100: {
-		width: 100,
-	},
+	w100: { width: 100 },
+
+	col: { flexDirection: "column" },
+
+	row: { flexDirection: "row" },
 });
 //A FAZER: w-100   bottom-absolute w-100
 

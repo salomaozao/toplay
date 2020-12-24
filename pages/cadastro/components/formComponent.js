@@ -1,25 +1,21 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
-import styles from "../styles/styles";
 
-var show = true;
+import FormInput from "./formInput";
+import styles from "../../../styles/styles";
 
 const formFase = (props) => {
 	return (
-		<View name="formFase" style={[props.style, styles.bgPrimary]}>
-			<View>
-				<Text>{props.content[0].title}:</Text>
-				<TextInput
+		<View style={[styles.bgPrimary]}>
+			<View name="formFase" style={[props.style, styles.mx4]}>
+				<FormInput
+					title={props.content[0].title}
 					placeholder={props.content[0].placeholder}
-					style={{ borderColor: "gray", borderWidth: 1 }}
 				/>
-			</View>
 
-			<View>
-				<Text>{props.content[1].title}:</Text>
-				<TextInput
+				<FormInput
+					title={props.content[1].title}
 					placeholder={props.content[1].placeholder}
-					style={{ borderColor: "gray", borderWidth: 1 }}
 				/>
 			</View>
 		</View>

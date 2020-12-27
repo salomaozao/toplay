@@ -1,20 +1,66 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { Text, Button, Card } from "react-native-paper";
+import { View, TouchableHighlight } from "react-native";
+// import { View, Text, Button, TouchableHighlight } from "react-native";
 
 import FormInput from "../cadastro/components/formComponent";
 import styles from "../../styles/styles";
 
 const ShowColors = (props) => (
 	<View>
-		<Text style={styles.title}></Text>
 		<View
-			style={{
-				height: 100,
-				width: 100,
-				backgroundColor: props.bg,
-				borderRadius: 5,
-			}}
-		></View>
+			style={[
+				{
+					height: 100,
+					width: 100,
+					backgroundColor: props.bg,
+					borderRadius: 5,
+				},
+				styles.centerY,
+				styles.centerX,
+			]}
+		>
+			<Text>{props.children !== undefined ? props.children : ""}</Text>
+		</View>
+	</View>
+);
+
+const BoxBttn = (props) => (
+	<View>
+		<TouchableHighlight
+			style={[
+				styles.centerX,
+				styles.bgPrimary,
+				styles.roundSm,
+				{ width: 100 },
+			]}
+			underlayColor="gray"
+			onPress={() => alert("Pressed!")}
+		>
+			<Text>{props.children}</Text>
+		</TouchableHighlight>
+	</View>
+);
+
+const Box = () => (
+	<View
+		style={[
+			styles.box,
+			styles.round,
+			styles.bgLight,
+			styles.p1,
+			styles.mx4,
+			styles.my2,
+			styles.col,
+			styles.centerX,
+			{ height: 300, width: 100 },
+		]}
+	>
+		<ShowColors bg="#d3d3d3">Imagem</ShowColors>
+		<View style={styles.my4}>
+			<Text>Texto abaixo da imagem</Text>
+		</View>
+		<BoxBttn>Botão</BoxBttn>
 	</View>
 );
 
@@ -110,7 +156,28 @@ const ControlPage = () => {
 						</View>
 					</View>
 				</View>
+
+				<View style={styles.mx4}>
+					<Text style={styles.title}>Caixa de item</Text>
+					<Box></Box>
+				</View>
 			</View>
+			<View style={styles.row}>
+				<View>
+					<Text style={styles.title}>Barra de busca</Text>
+				</View>
+			</View>
+			<Card>
+				<Card.Cover
+					url={
+						"https://pbs.twimg.com/profile_images/823569976342773760/c2RLAG7h_400x400.jpg"
+					}
+				></Card.Cover>
+				<Card.Actions>
+					<Button>Cancel</Button>
+					<Button>Ok</Button>
+				</Card.Actions>
+			</Card>
 		</View>
 	);
 };

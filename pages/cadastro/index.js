@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { View, Button, Dimensions, StatusBar, Platform } from "react-native";
+import { View, Dimensions, StatusBar, Platform } from "react-native";
+import { Text, Button } from "react-native-paper";
 
 import Header from "./components/header";
 import FormComponent from "./components/formComponent";
 import styles from "../../styles/styles";
 
 const cadastro = (props) => {
-	const [showingComp, setShowingComp] = useState([true, false, false, false]);
+	const [showingComp, setShowingComp] = useState([
+		true,
+		false,
+		false,
+		false,
+		false,
+	]);
 
 	const changeForm = (num) => {
-		let arr = [false, false, false, false];
+		let arr = [false, false, false, false, false];
 		arr[num] = true;
 		setShowingComp(arr);
 	};
@@ -56,6 +63,7 @@ const cadastro = (props) => {
 						style={{
 							display: showingComp[0] ? "flex" : "none",
 						}}
+						type={"input"}
 						content={[
 							{
 								mainTitle: "Texto demonstrativo, 10 palavras",
@@ -76,6 +84,7 @@ const cadastro = (props) => {
 						style={{
 							display: showingComp[1] ? "flex" : "none",
 						}}
+						type={"input"}
 						content={[
 							{
 								mainTitle: "Texto demonstrativo, 20 palavras",
@@ -96,6 +105,7 @@ const cadastro = (props) => {
 						style={{
 							display: showingComp[2] ? "flex" : "none",
 						}}
+						type={"input"}
 						content={[
 							{
 								mainTitle: "Bem vindo!",
@@ -115,6 +125,7 @@ const cadastro = (props) => {
 						style={{
 							display: showingComp[3] ? "flex" : "none",
 						}}
+						type={"input"}
 						content={[
 							{
 								mainTitle: "Bem vindo!",
@@ -130,9 +141,41 @@ const cadastro = (props) => {
 							},
 						]}
 					></FormComponent>
+
+					<FormComponent
+						style={{
+							display: showingComp[4] ? "flex" : "none",
+						}}
+						type={"check"}
+						content={{
+							title: "hihi",
+							text: (
+								<View style={styles.centerX}>
+									<Text>
+										Você concorda com os termos e condições
+										de uso?
+									</Text>
+									<Text
+										style={[
+											styles.small,
+											{ color: "#5cbac4" },
+										]}
+									>
+										Toque para ver mais
+									</Text>
+								</View>
+							),
+						}}
+					></FormComponent>
 				</View>
 			</View>
-			<Button onPress={updateForm} title={"Próximo"}></Button>
+			<Button
+				onPress={updateForm}
+				contentStyle={styles.bgSecondary}
+				labelStyle={styles.textSecondary}
+			>
+				Próximo
+			</Button>
 		</View>
 	);
 };

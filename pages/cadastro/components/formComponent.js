@@ -8,8 +8,8 @@ import styles from "../../../styles/styles";
 const formFase = (props) => {
 	if (props.type === "input") {
 		return (
-			<View style={styles.mx4}>
-				<View name="formFase" style={[, styles.mx4, styles.my2]}>
+			<View style={[styles.mx4, props.style]}>
+				<View name="formFase" style={[styles.mx4, styles.my2]}>
 					<View style={styles.centerX}>
 						<Text style={[styles.title, styles.textCenter]}>
 							{props.content[0].mainTitle}
@@ -35,7 +35,7 @@ const formFase = (props) => {
 		);
 	} else if (props.type === "check") {
 		return (
-			<View style={[styles.centerX, styles.mx4]}>
+			<View style={[styles.mx4, props.style, styles.centerX]}>
 				<Text style={[styles.title, styles.my2]}>
 					{props.content.title}
 				</Text>
@@ -45,7 +45,7 @@ const formFase = (props) => {
 				</View>
 			</View>
 		);
-	}
+	} else return null;
 };
 
 export default formFase;

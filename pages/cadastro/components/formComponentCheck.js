@@ -1,11 +1,18 @@
-import React from "react";
-import { View, Text, TextInput, CheckBox } from "react-native";
-import styles from "../../../styles/styles";
+import * as React from "react";
+import { Checkbox } from "react-native-paper";
 
-const formCheck = () => (
-	<View>
-		<CheckBox val/>
-	</View>
-);
+const MyComponent = () => {
+	const [checked, setChecked] = React.useState(false);
 
-export default formCheck;
+	return (
+		<Checkbox
+			status={"checked"}
+			checked={true}
+			onPress={() => {
+				setChecked(!checked);
+			}}
+		/>
+	);
+};
+
+export default MyComponent;

@@ -1,7 +1,9 @@
 import { StyleSheet } from "react-native";
 
 var styles = StyleSheet.create({
-	bgPrimary: { backgroundColor: "#d3d3d3" /*MUDAR COR*/ },
+	bgPrimary: { backgroundColor: '#c3e3e2' /*MUDAR COR*/ },
+	
+	bgSecondary: { backgroundColor: "#ab7d8b" /*MUDAR COR*/ },
 
 	bgLight: { backgroundColor: "white" /*MUDAR COR*/ },
 
@@ -43,6 +45,9 @@ var styles = StyleSheet.create({
 		borderTopWidth: 1,
 	},
 
+	round: { borderRadius: 10 },
+	roundSm: { borderRadius: 5 },
+
 	textSecondary: { color: "black" /*MUDAR COR*/ },
 
 	title: { fontSize: 24, fontWeight: "800" },
@@ -62,9 +67,12 @@ var styles = StyleSheet.create({
 	col: { flexDirection: "column" },
 
 	row: { flexDirection: "row" },
-});
-//A FAZER: w-100   bottom-absolute w-100
 
-//SUBSTITUIDOS: container > my4
+	box: {
+		height: 200,
+		width: 50,
+		padding: 5,
+	},
+});
 
 export default styles;

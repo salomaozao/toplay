@@ -16,9 +16,17 @@ const ProductView = () => (
 				campeonatos!
 			</Chip>
 		</View>
-		v
-		<Drawer.Item style={{ backgroundColor: "#64ffda" }} icon="star" label="Informação!" />
-		<Drawer.Item style={{ backgroundColor: "#64ffda" }} label="Mais informação!" />
+		<View style={{ flexDirection: "row" }}>
+			<Drawer.Item style={{ backgroundColor: "#64ffda" }} icon="star" label="Informação!" />
+			<Drawer.Item style={{ backgroundColor: "#64ffda" }} label="Mais informação!" />
+			<Drawer.Item style={{ backgroundColor: "#64ffda" }} icon="star" label="Informação!" />
+		</View>
+
+        <View>
+            <Surface>
+                <Text>haha</Text>
+            </Surface>
+        </View>
 	</View>
 )
 

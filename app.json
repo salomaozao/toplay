@@ -1,0 +1,12 @@
+{
+  "name": "toplay4",
+  "displayName": "toplay4",
+  "expo": {
+    "name": "toplay4",
+    "slug": "toplay4",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

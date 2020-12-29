@@ -3,7 +3,7 @@ import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper"
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />
 
-const MyComponent = () => (
+const CardCustom = () => (
 	<Card>
 		<Card.Title
 			title="Quadra são João"
@@ -18,4 +18,4 @@ const MyComponent = () => (
 	</Card>
 )
 
-export default MyComponent
+export default Card

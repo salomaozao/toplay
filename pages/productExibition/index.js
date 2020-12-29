@@ -22,11 +22,12 @@ const ProductView = () => (
 			<Drawer.Item style={{ backgroundColor: "#64ffda" }} icon="star" label="Informação!" />
 		</View>
 
-        <View>
-            <Surface>
-                <Text>haha</Text>
-            </Surface>
-        </View>
+		<View>
+			<Surface>
+				<Image uri={"https://picsum.photos/700"} />
+			</Surface>
+		</View>
+        {/* <Appbar></Appbar> */}
 	</View>
 )
 

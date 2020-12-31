@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 rootProject.name = 'toplay4'
+=======
+rootProject.name = 'MyReactNative'
+>>>>>>> bce24d5d13c8a81d10c001224221470a054dc82d
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
 includeUnimodulesProjects()

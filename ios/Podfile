@@ -4,21 +4,36 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
+<<<<<<< HEAD
 target 'toplay4' do
+=======
+target 'MyReactNative' do
+>>>>>>> bce24d5d13c8a81d10c001224221470a054dc82d
   use_unimodules!
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
+<<<<<<< HEAD
   # Comment this code below to disable Flipper.
+=======
+  # Uncomment the code below to enable Flipper.
+>>>>>>> bce24d5d13c8a81d10c001224221470a054dc82d
   #
   # You should not install Flipper in CI environments when creating release
   # builds, this will lead to significantly slower build times.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work.
   #
+<<<<<<< HEAD
    use_flipper!
    post_install do |installer|
      flipper_post_install(installer)
    end
+=======
+  #  use_flipper!
+  #  post_install do |installer|
+  #    flipper_post_install(installer)
+  #  end
+>>>>>>> bce24d5d13c8a81d10c001224221470a054dc82d
 end

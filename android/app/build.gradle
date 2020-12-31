@@ -132,7 +132,11 @@ android {
     }
 
     defaultConfig {
+<<<<<<< HEAD
         applicationId "com.toplay4"
+=======
+        applicationId "com.myreactnative"
+>>>>>>> bce24d5d13c8a81d10c001224221470a054dc82d
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

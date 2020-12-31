@@ -1,3 +1,7 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">toplay4</string>
+=======
+    <string name="app_name">MyReactNative</string>
+>>>>>>> bce24d5d13c8a81d10c001224221470a054dc82d
 </resources>

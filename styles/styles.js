@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from "react-native"
 
-var styles = StyleSheet.create({
-	bgPrimary: { backgroundColor: '#c3e3e2' /*MUDAR COR*/ },
-	
+const styles = StyleSheet.create({
+	bgPrimary: { backgroundColor: "#c3e3e2" /*MUDAR COR*/ },
+
 	bgSecondary: { backgroundColor: "#ab7d8b" /*MUDAR COR*/ },
 
 	bgLight: { backgroundColor: "white" /*MUDAR COR*/ },
@@ -10,6 +10,12 @@ var styles = StyleSheet.create({
 	p1: { padding: 4 },
 
 	py2: { paddingTop: 20 },
+
+	m2: { margin: 8 },
+
+	m4: { margin: 16 },
+
+	mx2: { marginHorizontal: 8 },
 
 	mx4: { marginHorizontal: 16 },
 
@@ -52,7 +58,7 @@ var styles = StyleSheet.create({
 
 	title: { fontSize: 24, fontWeight: "800" },
 
-	small: { fontSize: 8 /*AJUSTAR?*/ },
+	small: { fontSize: 16 /*AJUSTAR?*/ },
 
 	textCenter: { textAlign: "center" },
 
@@ -70,9 +76,9 @@ var styles = StyleSheet.create({
 
 	box: {
 		height: 200,
-		width: 50,
+		width: 300,
 		padding: 5,
 	},
-});
+})
 
-export default styles;
+export default styles

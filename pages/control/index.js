@@ -1,10 +1,11 @@
 import React from "react"
-import { View, TouchableHighlight, Image } from "react-native"
+import { View, TouchableHighlight, Image, ScrollView } from "react-native"
 import { Text, Button, Card } from "react-native-paper"
 
 import Navigation from "../generalComponents/navigation"
 import SearchBar from "../generalComponents/searchBar"
 import CardCustom from "../mainPage/components/card"
+import Carousel from "../productExibition/components/carousel"
 
 // import { View, Text, Button, TouchableHighlight } from "react-native";
 
@@ -32,14 +33,35 @@ const ShowColors = (props) => (
 
 const BoxBttn = (props) => (
 	<View>
-		<TouchableHighlight style={[styles.centerX, styles.bgPrimary, styles.roundSm, { width: 100 }]} underlayColor="gray" onPress={() => alert("Pressed!")}>
+		<TouchableHighlight
+			style={[
+				styles.centerX,
+				styles.bgPrimary,
+				styles.roundSm,
+				{ width: 100 },
+			]}
+			underlayColor="gray"
+			onPress={() => alert("Pressed!")}
+		>
 			<Text>{props.children}</Text>
 		</TouchableHighlight>
 	</View>
 )
 
 const Box = () => (
-	<View style={[styles.box, styles.round, styles.bgLight, styles.p1, styles.mx4, styles.my2, styles.col, styles.centerX, { height: 300, width: 100 }]}>
+	<View
+		style={[
+			styles.box,
+			styles.round,
+			styles.bgLight,
+			styles.p1,
+			styles.mx4,
+			styles.my2,
+			styles.col,
+			styles.centerX,
+			{ height: 300, width: 100 },
+		]}
+	>
 		<ShowColors bg="#d3d3d3">Imagem</ShowColors>
 		<View style={styles.my4}>
 			<Text>Texto abaixo da imagem</Text>
@@ -50,13 +72,12 @@ const Box = () => (
 
 const ControlPage = () => {
 	return (
-		<View>
+		<ScrollView>
 			<View>
 				<View>
 					<View>
 						<View style={{ margin: 25 }}>
 							<Text> NAVIGATION: </Text>
-							<Navigation></Navigation>
 						</View>
 
 						<View style={{ margin: 25 }}>
@@ -75,7 +96,8 @@ const ControlPage = () => {
 					content={[
 						{
 							mainTitle: "Formulário",
-							desc: "Geralmente utilizado em fases, tamanho e cores customisáveis",
+							desc:
+								"Geralmente utilizado em fases, tamanho e cores customisáveis",
 						},
 
 						{
@@ -98,7 +120,13 @@ const ControlPage = () => {
 						}}
 					/>
 				</View>
-				<View style={[styles.my2, styles.mx4, { flexDirection: "column" }]}>
+				<View
+					style={[
+						styles.my2,
+						styles.mx4,
+						{ flexDirection: "column" },
+					]}
+				>
 					<Text style={styles.title}>Botões</Text>
 					<Text>Os tamanhos não são uniformes.</Text>
 					<View style={styles.my2}>
@@ -158,9 +186,7 @@ const ControlPage = () => {
 				</View>
 			</View>
 			<View style={styles.row}>
-				<View>
-					<Text style={styles.title}>Barra de busca</Text>
-				</View>
+				<Carousel></Carousel>
 			</View>
 			<View>
 				<Image
@@ -176,7 +202,7 @@ const ControlPage = () => {
 					<Button>Ok</Button>
 				</Card.Actions>
 			</Card>
-		</View>
+		</ScrollView>
 	)
 }
 

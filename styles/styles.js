@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 
 	textCenter: { textAlign: "center" },
 
-	centerX: { alignItems: "center" },
+	centerX: { alignContent: "center" },
 
 	centerY: { justifyContent: "center" },
 

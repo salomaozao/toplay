@@ -14,7 +14,6 @@ const { width: windowWidth, height: windowHeight } = Dimensions.get("window")
 
 const styles = StyleSheet.create({
 	slide: {
-		height: windowHeight,
 		width: windowWidth,
 		justifyContent: "center",
 		alignItems: "center",
@@ -46,20 +45,22 @@ const slideList = Array.from({ length: 30 }).map((_, i) => {
 	return {
 		id: i,
 		image: `https://picsum.photos/1440/2842?random=${i}`,
-		title: `This is the title ${i + 1}!`,
-		subtitle: `This is the subtitle ${i + 1}!`,
+		// title: `This is the title ${i + 1}!`,
+		// subtitle: `This is the subtitle ${i + 1}!`,
+		title: null,
+		subtitle: null,
 	}
 })
 
 const Slide = memo(function Slide({ data }) {
 	return (
-		<View style={styles.slide}>
+		<View style={[styles.slide]}>
 			<Image
 				source={{ uri: data.image }}
-				style={styles.slideImage}
+				style={[styles.slideImage]}
 			></Image>
-			<Text style={styles.slideTitle}>{data.title}</Text>
-			<Text style={styles.slideSubtitle}>{data.subtitle}</Text>
+			{/* <Text style={styles.slideTitle}>{data.title}</Text>
+			<Text style={styles.slideSubtitle}>{data.subtitle}</Text> */}
 		</View>
 	)
 })

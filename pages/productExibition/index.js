@@ -4,17 +4,17 @@ import {
 	Text,
 	Button,
 	Chip,
-	Avatar,
-	Badge,
-	Appbar,
-	DataTable,
+	Avatar, //sí
+	Badge, // no
+	Appbar, // no fundo
 	Drawer,
-	FAB,
-	Surface,
+	FAB, //no
 } from "react-native-paper"
 import { View, Image, Dimensions, ScrollView } from "react-native"
 import styles from "../../styles/styles"
 import Carousel from "./components/carousel"
+import Calendar from "./components/calendar"
+import Datatable from "./components/datatable"
 
 const ImgCustom = () => {
 	const imgWidth = Dimensions.get("window").width
@@ -47,34 +47,23 @@ const ProductView = () => {
 		<ScrollView>
 			<View style={styles.mx2}>
 				<Title style={styles.title}>Nome da quadra</Title>
-				<Text style={[styles.small, styles.mx4]}>Nome do dono</Text>
-				<View style={styles.row}>
+				<View style={[styles.row, styles.mx4]}>
+					<Avatar.Image
+						size={24}
+						source={{ uri: "https://picsum.photos/700" }}
+						style={styles.mr2}
+					/>
+					<Text style={[styles.small]}>Nome do dono</Text>
+				</View>
+				<View style={[styles.row, styles.ml2]}>
 					<Chip
 						icon="information"
 						onPress={() => console.log("Pressed")}
 					>
 						Informações!
 					</Chip>
-					<Chip
-						icon="information"
-						onPress={() => console.log("Pressed")}
-					>
-						Esta quadra possuí campeonatos!
-					</Chip>
-					<Chip
-						icon="information"
-						style={{ backgroundColor: "#fe1090" }}
-						onPress={() => console.log("Pressed")}
-					>
-						campeonatos!
-					</Chip>
 				</View>
 				<View style={styles.row}>
-					<Drawer.Item
-						style={{ backgroundColor: "#64ffda" }}
-						icon="star"
-						label="Informação!"
-					/>
 					<Drawer.Item
 						style={{ backgroundColor: "#fe1090" }}
 						icon="star"
@@ -82,8 +71,22 @@ const ProductView = () => {
 					/>
 				</View>
 			</View>
-			<View>
+			<View style={styles.col}>
 				<Carousel />
+				<Datatable />
+				<View>
+					{/* <Calendar /> */}
+					<View style={[{ alignSelf: "flex-end" }, styles.mx4]}>
+						<Title style={styles.title}>
+							R$18,00<Text style={styles.small}>por hora</Text>
+						</Title>
+						<Button contentStyle={styles.bgPrimary}>alugar</Button>
+					</View>
+				</View>
+				{/* <Appbar */}
+				<Button contentStyle={styles.bgPrimary}>alugar</Button>
+				<Button contentStyle={styles.bgPrimary}>alugar</Button>
+				<Button contentStyle={styles.bgPrimary}>alugar</Button>
 			</View>
 		</ScrollView>
 	)

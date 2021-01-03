@@ -19,6 +19,12 @@ const styles = StyleSheet.create({
 
 	mx4: { marginHorizontal: 16 },
 
+	mr2: { marginRight: 8 },
+	mr4: { marginRight: 16 },
+
+	ml2: { marginLeft: 8 },
+	ml2: { marginLeft: 8 },
+
 	my2: { marginVertical: 8 },
 
 	my4: { marginVertical: 16 },

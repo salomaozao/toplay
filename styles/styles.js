@@ -60,17 +60,21 @@ const styles = StyleSheet.create({
 	round: { borderRadius: 10 },
 	roundSm: { borderRadius: 5 },
 
-	textSecondary: { color: "black" /*MUDAR COR*/ },
+	textPrimary: { color: "black", fontWeight: "bold" /*MUDAR COR*/ },
 
-	title: { fontSize: 24, fontWeight: "800" },
+	textSecondary: { color: "#666464", fontWeight: "bold" /*MUDAR COR*/ },
+
+	title: { fontSize: 36, fontWeight: "bold" },
+
+	titleSecondary: { fontSize: 24 },
 
 	small: { fontSize: 16 /*AJUSTAR?*/ },
 
 	textCenter: { textAlign: "center" },
 
-	centerX: { alignContent: "center" },
+	centerX: { justifyContent: "center" },
 
-	centerY: { justifyContent: "center" },
+	centerY: { alignItems: "center" },
 
 	bottomAbs: { flex: 1 },
 

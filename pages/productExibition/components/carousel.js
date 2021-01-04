@@ -22,22 +22,6 @@ const styles = StyleSheet.create({
 	slideTitle: { fontSize: 24 },
 	slideSubtitle: { fontSize: 18 },
 
-	pagination: {
-		position: "absolute",
-		bottom: 8,
-		width: "100%",
-		justifyContent: "center",
-		flexDirection: "row",
-	},
-	paginationDot: {
-		width: 8,
-		height: 8,
-		borderRadius: 4,
-		marginHorizontal: 2,
-	},
-	paginationDotActive: { backgroundColor: "lightblue" },
-	paginationDotInactive: { backgroundColor: "gray" },
-
 	carousel: { flex: 1 },
 })
 
@@ -64,26 +48,6 @@ const Slide = memo(function Slide({ data }) {
 		</View>
 	)
 })
-
-function Pagination({ index }) {
-	return (
-		<View style={styles.pagination} pointerEvents="none">
-			{slideList.map((_, i) => {
-				return (
-					<View
-						key={i}
-						style={[
-							styles.paginationDot,
-							index === i
-								? styles.paginationDotActive
-								: styles.paginationDotInactive,
-						]}
-					/>
-				)
-			})}
-		</View>
-	)
-}
 
 export default function Carousel() {
 	const [index, setIndex] = useState(0)
@@ -140,7 +104,6 @@ export default function Carousel() {
 				onScroll={onScroll}
 				{...flatListOptimizationProps}
 			/>
-			<Pagination index={index}></Pagination>
 		</>
 	)
 }

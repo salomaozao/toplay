@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { View } from "react-native"
+import { Text, Icon, Button } from "react-native-paper"
 import CalendarPicker from "react-native-calendar-picker"
 
 export default class Calendar extends Component {
@@ -45,15 +46,25 @@ export default class Calendar extends Component {
 						"dez",
 					]}
 					weekdays={["seg", "ter", "qua", "qui", "sex", "sáb", "dom"]}
+					nextComponent={
+						<Button
+							icon="arrow-right"
+							style={{ position: "relative", top: 10, left: 30 }}
+						/>
+					}
+					previousComponent={
+						<Button
+							icon="arrow-left"
+							style={{ position: "relative", top: 10, right: 20 }}
+						/>
+					}
+					previousTitle="<"
 					onDateChange={this.onDateChange}
 					selectedDayColor={
 						this.isDayValid(startDate) ? "green" : "red"
 					}
 				/>
-
-				<View>
-					<Text>SELECTED DATE:{startDate}</Text>
-				</View>
+				{/* <Text>SELECTED DATE:{startDate}</Text> */}
 			</View>
 		)
 	}

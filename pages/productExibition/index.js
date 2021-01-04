@@ -1,92 +1,109 @@
 import React from "react"
 import {
-	Title,
 	Text,
 	Button,
 	Chip,
-	Avatar, //sí
-	Badge, // no
+	Avatar,
 	Appbar, // no fundo
 	Drawer,
-	FAB, //no
+	Dialog,
+	Portal,
+	Paragraph,
 } from "react-native-paper"
 import { View, Image, Dimensions, ScrollView } from "react-native"
 import styles from "../../styles/styles"
+
 import Carousel from "./components/carousel"
 import Calendar from "./components/calendar"
 import Datatable from "./components/datatable"
-
-const ImgCustom = () => {
-	const imgWidth = Dimensions.get("window").width
-	return (
-		<Image
-			style={[
-				{
-					width: imgWidth / 3,
-					height: imgWidth / 4,
-				},
-				styles.shadow,
-			]}
-			source={{ uri: "https://picsum.photos/700" }}
-		/>
-	)
-}
-const ImgShow = () => {
-	return (
-		<View
-			style={[styles.row, styles.m4, { justifyContent: "space-between" }]}
-		>
-			<ImgCustom />
-			<ImgCustom />
-		</View>
-	)
-}
+import PopupDialog from "./components/PopupDialog"
 
 const ProductView = () => {
+	const [visible, setVisible] = React.useState(false)
+	const showDialog = () => setVisible(true)
+
 	return (
-		<ScrollView>
-			<View style={styles.mx2}>
-				<Title style={styles.title}>Nome da quadra</Title>
-				<View style={[styles.row, styles.mx4]}>
-					<Avatar.Image
-						size={24}
-						source={{ uri: "https://picsum.photos/700" }}
-						style={styles.mr2}
-					/>
-					<Text style={[styles.small]}>Nome do dono</Text>
-				</View>
-				<View style={[styles.row, styles.ml2]}>
-					<Chip
-						icon="information"
-						onPress={() => console.log("Pressed")}
+		<ScrollView
+			style={{
+				height: Dimensions.get("window").height - 72,
+			}}
+		>
+			<PopupDialog
+				visible={visible}
+				setVisible={setVisible}
+				hideDialog={() => setVisible(false)}
+			/>
+			<View
+				style={{
+					marginBottom: 10,
+				}}
+			>
+				<View style={[styles.mx2]}>
+					<View style={styles.title}>
+						<Text style={[styles.title, styles.textCenter]}>
+							Nome da quadra
+						</Text>
+					</View>
+					<View
+						style={[
+							styles.row,
+							styles.centerX,
+							{ position: "relative" },
+						]}
 					>
-						Informações!
-					</Chip>
-				</View>
-				<View style={styles.row}>
-					<Drawer.Item
-						style={{ backgroundColor: "#fe1090" }}
-						icon="star"
-						label="Informação!"
-					/>
-				</View>
-			</View>
-			<View style={styles.col}>
-				<Carousel />
-				<Datatable />
-				<View>
-					{/* <Calendar /> */}
-					<View style={[{ alignSelf: "flex-end" }, styles.mx4]}>
-						<Title style={styles.title}>
-							R$18,00<Text style={styles.small}>por hora</Text>
-						</Title>
-						<Button contentStyle={styles.bgPrimary}>alugar</Button>
+						<Avatar.Image
+							size={24}
+							source={{ uri: "https://picsum.photos/700" }}
+							style={styles.mr2}
+						/>
+						<Text style={[styles.small, styles.textSecondary]}>
+							Nome do dono
+						</Text>
+					</View>
+					<View
+						style={[
+							styles.row,
+							styles.ml2,
+							styles.mt2,
+							styles.centerX,
+						]}
+					>
+						<Chip
+							icon="information"
+							onPress={() => console.log("Pressed")}
+						>
+							Esta quadra não é aberta em fins de semana
+						</Chip>
+					</View>
+					<View style={styles.centerX}>
+						<Drawer.Item
+							style={{ backgroundColor: "#5dc8d4" }}
+							icon="star"
+							label="CAMPEONATOS!"
+						/>
 					</View>
 				</View>
-				{/* <Appbar */}
-				<Button contentStyle={styles.bgPrimary}>alugar</Button>
-				<Button contentStyle={styles.bgPrimary}>alugar</Button>
-				<Button contentStyle={styles.bgPrimary}>alugar</Button>
+				<View style={styles.col}>
+					<View>
+						<Carousel />
+					</View>
+					<Datatable />
+					<View>
+						<Calendar />
+						<View style={[{ alignSelf: "flex-end" }, styles.mx4]}>
+							<Text style={styles.title}>
+								R$18,00
+								<Text style={styles.small}>por hora</Text>
+							</Text>
+							<Button
+								contentStyle={styles.bgPrimary}
+								onPress={showDialog}
+							>
+								alugar
+							</Button>
+						</View>
+					</View>
+				</View>
 			</View>
 		</ScrollView>
 	)

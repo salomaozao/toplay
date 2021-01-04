@@ -4,11 +4,6 @@ import { DataTable, Avatar } from "react-native-paper"
 //  COMO VAI PASSAR DADOS??????
 const DataTableCustom = () => (
 	<DataTable>
-		<DataTable.Header>
-			<DataTable.Title>Coisas</DataTable.Title>
-			<DataTable.Title numeric>?</DataTable.Title>
-		</DataTable.Header>
-
 		<DataTable.Row>
 			<DataTable.Cell>Banheiro</DataTable.Cell>
 			<DataTable.Cell numeric>

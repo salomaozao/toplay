@@ -25,7 +25,7 @@ const ProductView = () => {
 	return (
 		<ScrollView
 			style={{
-				height: Dimensions.get("window").height - 72,
+				height: Dimensions.get("window").height - 95,
 			}}
 		>
 			<PopupDialog
@@ -35,7 +35,7 @@ const ProductView = () => {
 			/>
 			<View
 				style={{
-					marginBottom: 10,
+					marginBottom: 15,
 				}}
 			>
 				<View style={[styles.mx2]}>

@@ -1,20 +1,26 @@
 import React from "react"
 import { View } from "react-native"
-import { Text } from "react-native-paper"
+import { Avatar, Text, Button } from "react-native-paper"
 import styles from "../../styles/styles"
 
 const Header = () => (
-	<View style={[styles.bgPrimary, styles.textCenter]}>
+	<View style={styles.bgPrimary}>
 		<View
 			style={[
-				styles.borderBottom,
-				styles.borderDark,
-				styles.textCenter,
-				styles.centerX,
-				{ marginTop: 35 },
+				{ marginTop: 35, justifyContent: "space-between" },
+				styles.row,
 			]}
 		>
-			<Text>Toplay</Text>
+			{/* <Text style={styles.textCenter}>aa</Text> */}
+			<View>
+				<Button icon="settings-helper"></Button>
+			</View>
+			<View>
+				<Text>aa</Text>
+			</View>
+			<View style={styles.mr2}>
+				<Avatar.Text size={24} label="XD" />
+			</View>
 		</View>
 	</View>
 )

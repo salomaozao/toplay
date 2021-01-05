@@ -17,95 +17,129 @@ import Carousel from "./components/carousel"
 import Calendar from "./components/calendar"
 import Datatable from "./components/datatable"
 import PopupDialog from "./components/PopupDialog"
+import PopubAbout from "./components/popupAbout"
+import { TouchableHighlight } from "react-native-gesture-handler"
+import PopupAbout from "./components/popupAbout"
 
 const ProductView = () => {
-	const [visible, setVisible] = React.useState(false)
-	const showDialog = () => setVisible(true)
+	const [isDialogVisile, setDialogVisible] = React.useState(false)
+	const showDialog = () => setDialogVisible(true)
+
+	const [isAboutVisible, setAboutVisible] = React.useState(false)
+	const showAbout = () => setAboutVisible(true)
 
 	return (
-		<ScrollView
-			style={{
-				height: Dimensions.get("window").height - 95,
-			}}
-		>
+		<>
 			<PopupDialog
-				visible={visible}
-				setVisible={setVisible}
-				hideDialog={() => setVisible(false)}
+				visible={isDialogVisile}
+				setVisible={setDialogVisible}
+				hideDialog={() => setDialogVisible(false)}
 			/>
-			<View
+
+			<PopupAbout
+				visible={isAboutVisible}
+				setVisible={setAboutVisible}
+				hideDialog={() => setAboutVisible(false)}
+			/>
+			<ScrollView
 				style={{
-					marginBottom: 15,
+					height: Dimensions.get("window").height - 90,
 				}}
 			>
-				<View style={[styles.mx2]}>
-					<View style={styles.title}>
-						<Text style={[styles.title, styles.textCenter]}>
-							Nome da quadra
-						</Text>
-					</View>
-					<View
-						style={[
-							styles.row,
-							styles.centerX,
-							{ position: "relative" },
-						]}
-					>
-						<Avatar.Image
-							size={24}
-							source={{ uri: "https://picsum.photos/700" }}
-							style={styles.mr2}
-						/>
-						<Text style={[styles.small, styles.textSecondary]}>
-							Nome do dono
-						</Text>
-					</View>
-					<View
-						style={[
-							styles.row,
-							styles.ml2,
-							styles.mt2,
-							styles.centerX,
-						]}
-					>
-						<Chip
-							icon="information"
-							onPress={() => console.log("Pressed")}
-						>
-							Esta quadra não é aberta em fins de semana
-						</Chip>
-					</View>
-					<View style={styles.centerX}>
-						<Drawer.Item
-							style={{ backgroundColor: "#5dc8d4" }}
-							icon="star"
-							label="CAMPEONATOS!"
-						/>
-					</View>
-				</View>
-				<View style={styles.col}>
-					<View>
-						<Carousel />
-					</View>
-					<Datatable />
-					<View>
-						<Calendar />
-						<View style={[{ alignSelf: "flex-end" }, styles.mx4]}>
-							<Text style={styles.title}>
-								R$18,00
-								<Text style={styles.small}>por hora</Text>
+				<View
+					style={{
+						marginBottom: 15,
+					}}
+				>
+					<View style={[styles.mx2]}>
+						<View style={styles.title}>
+							<Text style={[styles.title, styles.textCenter]}>
+								Nome da quadra
 							</Text>
-							<Button
-								contentStyle={styles.bgPrimary}
-								onPress={showDialog}
+						</View>
+						<View
+							style={[
+								styles.row,
+								styles.centerX,
+								{ position: "relative" },
+							]}
+						>
+							<Avatar.Image
+								size={24}
+								source={{ uri: "https://picsum.photos/700" }}
+								style={styles.mr2}
+							/>
+							<Text style={[styles.small, styles.textSecondary]}>
+								Nome do dono
+							</Text>
+						</View>
+						<View
+							style={[
+								styles.row,
+								styles.ml2,
+								styles.mt2,
+								styles.centerX,
+							]}
+						>
+							<Chip
+								icon="information"
+								onPress={() => console.log("Pressed")}
 							>
-								alugar
-							</Button>
+								Esta quadra não é aberta em fins de semana
+							</Chip>
+						</View>
+						<View style={styles.centerX}>
+							<Drawer.Item
+								style={{ backgroundColor: "#5dc8d4" }}
+								icon="star"
+								label="CAMPEONATOS!"
+							/>
+						</View>
+					</View>
+					<View style={styles.col}>
+						<View>
+							<Carousel />
+						</View>
+						<Datatable />
+						<View>
+							<Calendar />
+							<View
+								style={[{ alignSelf: "flex-end" }, styles.mx4]}
+							>
+								<Text style={styles.title}>
+									R$18,00
+									<Text style={styles.small}>por hora</Text>
+								</Text>
+								<Button
+									contentStyle={styles.bgPrimary}
+									onPress={showDialog}
+								>
+									alugar
+								</Button>
+								<View>
+									<TouchableHighlight>
+										<Text
+											style={[
+												styles.small,
+												styles.mt2,
+												{
+													textDecorationLine:
+														"underline",
+													textAlign: "right",
+												},
+											]}
+											onPress={showAbout}
+										>
+											Saber mais
+										</Text>
+									</TouchableHighlight>
+								</View>
+							</View>
 						</View>
 					</View>
 				</View>
-			</View>
-		</ScrollView>
+			</ScrollView>
+		</>
 	)
 }
 export default ProductView

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { View, ScrollView } from "react-native"
+import { View, ScrollView, Dimensions } from "react-native"
 import { Button, Paragraph, Dialog, Portal, Text } from "react-native-paper"
 
 import styles from "../../../styles/styles"
@@ -10,7 +10,11 @@ const PopupDialog = ({ visible, setVisible, hideDialog }) => {
 			<Dialog visible={visible} onDismiss={hideDialog}>
 				<Dialog.Title>Horários</Dialog.Title>
 				<Dialog.Content>
-					<Dialog.ScrollArea>
+					<Dialog.ScrollArea
+						style={{
+							maxHeight: Dimensions.get("screen").width * 0.6,
+						}}
+					>
 						<ScrollView
 							contentContainerStyle={{ paddingHorizontal: 24 }}
 						>
@@ -66,7 +70,9 @@ const PopupDialog = ({ visible, setVisible, hideDialog }) => {
 					</Dialog.ScrollArea>
 				</Dialog.Content>
 				<Dialog.Actions>
-					<Button onPress={hideDialog} style={styles.textPrimary}>Fechar</Button>
+					<Button onPress={hideDialog} style={styles.textPrimary}>
+						Fechar
+					</Button>
 				</Dialog.Actions>
 			</Dialog>
 		</Portal>

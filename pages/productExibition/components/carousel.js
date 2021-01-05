@@ -92,7 +92,11 @@ export default function Carousel() {
 	}, [])
 
 	return (
-		<>
+		<View
+			style={{
+				height: windowHeight * 0.7 + 1,
+			}}
+		>
 			<FlatList
 				data={slideList}
 				style={styles.carousel}
@@ -104,6 +108,6 @@ export default function Carousel() {
 				onScroll={onScroll}
 				{...flatListOptimizationProps}
 			/>
-		</>
+		</View>
 	)
 }

@@ -1,10 +1,10 @@
-import React from "react";
-import { View, Text, TextInput } from "react-native";
-import styles from "../../../styles/styles";
+import React from "react"
+import { View, Text, TextInput } from "react-native"
+import styles from "../../../styles/styles"
 
 const inputs = (props) => (
 	<View>
-		<Text>{props.title}:</Text>
+		<Text style={[{ fontSize: 20 }, styles.textCenter]}>{props.title}</Text>
 		<View
 			style={[
 				styles.borderBottom,
@@ -17,6 +17,6 @@ const inputs = (props) => (
 			<TextInput placeholder={props.placeholder} />
 		</View>
 	</View>
-);
+)
 
-export default inputs;
+export default inputs

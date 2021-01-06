@@ -46,11 +46,7 @@ const ProductView = () => {
 					height: Dimensions.get("window").height - 90,
 				}}
 			>
-				<View
-					style={{
-						marginBottom: 15,
-					}}
-				>
+				<View>
 					<View style={[styles.mx2]}>
 						<View style={styles.title}>
 							<Text style={[styles.title, styles.textCenter]}>

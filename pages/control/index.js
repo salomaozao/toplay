@@ -3,7 +3,7 @@ import { View, TouchableHighlight, Image, ScrollView } from "react-native"
 import { Text, Button, Card } from "react-native-paper"
 
 import Navigation from "../generalComponents/navigation"
-import SearchBar from "../generalComponents/searchBar"
+import SearchBar from "../mainPage/components/searchBar"
 import CardCustom from "../mainPage/components/card"
 import Carousel from "../productExibition/components/carousel"
 

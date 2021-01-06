@@ -30,7 +30,6 @@ export default class Calendar extends Component {
 		return (
 			<View>
 				<CalendarPicker
-					scrollable
 					months={[
 						"jan",
 						"fev",

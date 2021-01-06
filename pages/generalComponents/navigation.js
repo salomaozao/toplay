@@ -3,7 +3,6 @@ import { View } from "react-native"
 import { BottomNavigation, Text } from "react-native-paper"
 import Header from "./header"
 
-
 const colors = ["green", "blue", "purple"]
 
 const MyComponent = (propsMain) => {
@@ -15,7 +14,7 @@ const MyComponent = (propsMain) => {
 	])
 
 	const ViewCuston = (props) => (
-		<View>
+		<View style={{ marginBottom: 15 }}>
 			<Header></Header>
 			{props.children}
 		</View>

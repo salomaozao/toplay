@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
 	borderLight: { borderColor: "gray" /*MUDAR COR*/ },
 
-	borderDark: { borderColor: "black" /*MUDAR COR*/ },
+	borderDark: { borderColor: "#333333" /*MUDAR COR*/ },
 
 	border: { borderWidth: 1 },
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
 	title: { fontSize: 36, fontWeight: "bold" },
 
-	titleSecondary: { fontSize: 24 },
+	titleSecondary: { fontSize: 24, fontWeight: "bold" },
 
 	small: { fontSize: 16 /*AJUSTAR?*/ },
 

@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native"
+import { Colors } from "react-native-paper"
 
 const styles = StyleSheet.create({
-	bgPrimary: { backgroundColor: "#c3e3e2" /*MUDAR COR*/ },
+	bgPrimary: { backgroundColor: Colors.blueGrey200 /*MUDAR COR*/ },
 
-	bgSecondary: { backgroundColor: "#ab7d8b" /*MUDAR COR*/ },
+	bgSecondary: { backgroundColor: Colors.red200 /*MUDAR COR*/ },
 
 	bgLight: { backgroundColor: "white" /*MUDAR COR*/ },
 
@@ -33,9 +34,11 @@ const styles = StyleSheet.create({
 
 	mt4: { marginTop: 16 },
 
+	mb2: { marginBottom: 8 },
+
 	mb4: { marginBottom: 16 },
 
-	borderLight: { borderColor: "gray" /*MUDAR COR*/ },
+	borderLight: { borderColor: Colors.grey100 },
 
 	borderDark: { borderColor: "#333333" /*MUDAR COR*/ },
 
@@ -66,15 +69,13 @@ const styles = StyleSheet.create({
 
 	title: { fontSize: 36, fontWeight: "bold" },
 
-	titleSecondary: { fontSize: 24, fontWeight: "bold" },
+	titleSecondary: { fontSize: 24, fontWeight: "bold", color: Colors.grey800 },
 
 	small: { fontSize: 16 /*AJUSTAR?*/ },
 
 	textCenter: { textAlign: "center" },
 
-	centerX: { justifyContent: "center" },
-
-	centerY: { alignItems: "center" },
+	center: { justifyContent: "center", alignItems: "center" },
 
 	bottomAbs: { flex: 1 },
 

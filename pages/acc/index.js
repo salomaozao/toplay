@@ -68,6 +68,32 @@ const AccPage = () => {
 
 						<InfoInpt label="Senha" value="comimeucu1991" pw />
 					</View>
+
+					<View
+						style={
+							page === 1
+								? { display: "flex" }
+								: { display: "none" }
+						}
+					>
+						<InfoInpt
+							label="Número de cartão"
+							value="111 111 1111 11"
+							icon="credit-card"
+						/>
+
+						<InfoInpt
+							label="CPF  registrado"
+							value="Gabriel Salomão B R Nascimento"
+						/>
+
+						<InfoInpt
+							label="RG registrado"
+							value="Gabriel Salomão B R Nascimento"
+						/>
+
+						<InfoInpt label="Senha" value="comimeucu1991" pw />
+					</View>
 					<View style={{ flex: 1, alignItems: "flex-end" }}>
 						<View style={styles.my2}>
 							<Button style={styles.bgSecondary}>Mudar</Button>

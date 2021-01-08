@@ -3,61 +3,62 @@ import { DataTable, Avatar } from "react-native-paper"
 import { Text, View } from "react-native"
 import styles from "../../../styles/styles"
 
-//  COMO VAI PASSAR DADOS??????
+const pagesContent = [
+	[
+		{
+			title: "Banheiro",
+			content: <Avatar.Icon size={24} icon="check" />,
+		},
+
+		{
+			title: "Chuveiro",
+			content: <Avatar.Icon size={24} icon="close" />,
+		},
+	],
+
+	[
+		{
+			title: "Churrasqueira",
+			content: <Avatar.Icon size={24} icon="close" />,
+		},
+		{
+			title: "Lanches",
+			content: <Avatar.Icon size={24} icon="close" />,
+		},
+	],
+
+	[
+		{
+			title: "Número de campos",
+			content: "3",
+		},
+		{
+			title: "Coletes",
+			content: <Avatar.Icon size={24} icon="check" />,
+		},
+	],
+]
+
 const DataTableCustom = () => {
 	const [page, setPage] = useState(0)
 	return (
 		<DataTable>
-			<View
-				style={page === 0 ? { display: "flex" } : { display: "none" }}
-			>
+			<View>
 				<DataTable.Row>
-					<DataTable.Cell>Banheiro</DataTable.Cell>
+					<DataTable.Cell>
+						{pagesContent[page][0].title}
+					</DataTable.Cell>
 					<DataTable.Cell numeric>
-						<Avatar.Icon size={24} icon="check" />
+						{pagesContent[page][0].content}
 					</DataTable.Cell>
 				</DataTable.Row>
 
 				<DataTable.Row>
-					<DataTable.Cell>Chuveiro</DataTable.Cell>
-					<DataTable.Cell numeric>
-						<Avatar.Icon size={24} icon="close" />
+					<DataTable.Cell>
+						{pagesContent[page][1].title}
 					</DataTable.Cell>
-				</DataTable.Row>
-			</View>
-
-			<View
-				style={page === 1 ? { display: "flex" } : { display: "none" }}
-			>
-				<DataTable.Row>
-					<DataTable.Cell>Churrasqueira</DataTable.Cell>
 					<DataTable.Cell numeric>
-						<Avatar.Icon size={24} icon="close" />
-					</DataTable.Cell>
-				</DataTable.Row>
-
-				<DataTable.Row>
-					<DataTable.Cell>Lanches</DataTable.Cell>
-					<DataTable.Cell numeric>
-						<Avatar.Icon size={24} icon="close" />
-					</DataTable.Cell>
-				</DataTable.Row>
-			</View>
-
-			<View
-				style={page === 2 ? { display: "flex" } : { display: "none" }}
-			>
-				<DataTable.Row>
-					<DataTable.Cell>Número de campos</DataTable.Cell>
-					<DataTable.Cell numeric>
-						<Text>2</Text>
-					</DataTable.Cell>
-				</DataTable.Row>
-
-				<DataTable.Row>
-					<DataTable.Cell>Coletes</DataTable.Cell>
-					<DataTable.Cell numeric>
-						<Avatar.Icon size={24} icon="close" />
+						{pagesContent[page][1].content}
 					</DataTable.Cell>
 				</DataTable.Row>
 			</View>

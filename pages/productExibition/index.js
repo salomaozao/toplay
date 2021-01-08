@@ -8,6 +8,7 @@ import {
 	Drawer,
 	Dialog,
 	Portal,
+	Surface,
 	Paragraph,
 } from "react-native-paper"
 import { View, Image, Dimensions, ScrollView } from "react-native"
@@ -102,34 +103,38 @@ const ProductView = () => {
 							<View
 								style={[{ alignSelf: "flex-end" }, styles.mx4]}
 							>
-								<Text style={styles.title}>
-									R$18,00
-									<Text style={styles.small}>por hora</Text>
-								</Text>
-								<Button
-									contentStyle={styles.bgPrimary}
-									onPress={showDialog}
-								>
-									alugar
-								</Button>
-								<View>
-									<TouchableHighlight>
-										<Text
-											style={[
-												styles.small,
-												styles.mt2,
-												{
-													textDecorationLine:
-														"underline",
-													textAlign: "right",
-												},
-											]}
-											onPress={showAbout}
-										>
-											Saber mais
+								<Surface>
+									<Text style={styles.title}>
+										R$18,00
+										<Text style={styles.small}>
+											por hora
 										</Text>
-									</TouchableHighlight>
-								</View>
+									</Text>
+									<Button
+										contentStyle={styles.bgPrimary}
+										onPress={showDialog}
+									>
+										alugar
+									</Button>
+									<View>
+										<TouchableHighlight>
+											<Text
+												style={[
+													styles.small,
+													styles.mt2,
+													{
+														textDecorationLine:
+															"underline",
+														textAlign: "right",
+													},
+												]}
+												onPress={showAbout}
+											>
+												Saber mais
+											</Text>
+										</TouchableHighlight>
+									</View>
+								</Surface>
 							</View>
 						</View>
 					</View>

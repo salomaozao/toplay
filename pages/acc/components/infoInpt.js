@@ -3,11 +3,18 @@ import { View, Dimensions, ScrollView } from "react-native"
 import { TextInput, Button } from "react-native-paper"
 import styles from "../../../styles/styles"
 
-const InfoInpt = ({ label, value, pw = false, icon = null }) => {
-	const [isPwHidden, setPwHidden] = useState(false)
+const InfoInpt = ({
+	label,
+	value,
+	isDisabled,
+	secured = false,
+	icon = null,
+}) => {
+	const [isSecuredHidden, setsecuredHidden] = useState(false)
+	const definedIcon = icon !== null ? icon : ["eye", "eye-off"]
 
 	return (
-		<View style={pw || icon !== null ? styles.row : {}}>
+		<View style={secured ? styles.row : {}}>
 			<TextInput
 				style={[
 					styles.mx4,
@@ -15,10 +22,9 @@ const InfoInpt = ({ label, value, pw = false, icon = null }) => {
 					styles.textCenter,
 					{
 						alignSelf: "stretch",
-						width:
-							pw || icon !== null
-								? Dimensions.get("window").width * 0.8
-								: null,
+						width: secured
+							? Dimensions.get("window").width * 0.8
+							: null,
 					},
 				]}
 				theme={{
@@ -27,11 +33,12 @@ const InfoInpt = ({ label, value, pw = false, icon = null }) => {
 				mode="outlined"
 				label={label}
 				value={value}
-				secureTextEntry={pw ? isPwHidden : false}
+				disabled={isDisabled}
+				secureTextEntry={secured ? isSecuredHidden : false}
 				scrollEnabled
 			/>
 
-			{pw ? (
+			{secured ? (
 				<View
 					style={[
 						styles.center,
@@ -44,27 +51,10 @@ const InfoInpt = ({ label, value, pw = false, icon = null }) => {
 					]}
 				>
 					<Button
-						icon={isPwHidden ? "eye" : "eye-off"}
-						onPress={() => setPwHidden(!isPwHidden)}
+						icon={isSecuredHidden ? definedIcon[1] : definedIcon[0]}
+						onPress={() => setsecuredHidden(!isSecuredHidden)}
+						disabled={isDisabled}
 					></Button>
-				</View>
-			) : (
-				<></>
-			)}
-
-			{icon !== null ? (
-				<View
-					style={[
-						styles.center,
-						{
-							position: "relative",
-							right: -5,
-							top: 5,
-							width: Dimensions.get("window").width * 0.05,
-						},
-					]}
-				>
-					<Button icon={icon}></Button>
 				</View>
 			) : (
 				<></>

@@ -1,5 +1,6 @@
 import React from "react"
 import { DefaultTheme, Text, Provider, Colors } from "react-native-paper"
+import { lockToPortrait } from "react-native-orientation"
 
 import Control from "./pages/control/index"
 import Cadastro from "./pages/cadastro/index"

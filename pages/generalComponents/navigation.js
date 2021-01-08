@@ -28,6 +28,7 @@ const MyComponent = (propsMain) => {
 				<ViewCuston>{propsMain.scenes[index]}</ViewCuston>
 			)}
 			barStyle={{ backgroundColor: colors[index] }}
+			
 		/>
 	)
 }

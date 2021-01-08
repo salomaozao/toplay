@@ -25,7 +25,7 @@ const AccPage = () => {
 				action={() => setShowInpts(!showInpts)}
 			/>
 			<View style={[styles.bgPrimary]}>
-				<ScrollView
+				<ScrollView	
 					style={{
 						height: Dimensions.get("window").height - 90,
 					}}
@@ -106,21 +106,20 @@ const AccPage = () => {
 
 							<InfoInpt
 								isDisabled={showInpts}
-								label="CPF  registrado"
-								value="Gabriel Salomão B R Nascimento"
+								label="Preencher"
+								value="placeholder"
 							/>
 
 							<InfoInpt
 								isDisabled={showInpts}
-								label="RG registrado"
-								value="Gabriel Salomão B R Nascimento"
+								label="preencher"
+								value="placeholder"
 							/>
 
 							<InfoInpt
 								isDisabled={showInpts}
-								label="Senha"
-								value="comimeucu1991"
-								pw
+								label="preencher"
+								value="placeholder"
 							/>
 						</View>
 						<View style={{ flex: 1, alignItems: "flex-end" }}>
@@ -148,7 +147,7 @@ const AccPage = () => {
 										}}
 									>
 										{page + 1} de {pageMax + 1}
-									</Text> 
+									</Text>
 									<Button
 										icon="arrow-right"
 										disabled={page === pageMax}

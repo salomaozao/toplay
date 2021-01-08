@@ -9,8 +9,10 @@ const InfoInpt = ({
 	isDisabled,
 	secured = false,
 	icon = null,
+	validationProccess = () => true,
 }) => {
-	const [isSecuredHidden, setsecuredHidden] = useState(false)
+	const [stateValue, setValue] = useState(value)
+	const [isSecuredHidden, setsecuredHidden] = useState(true)
 	const definedIcon = icon !== null ? icon : ["eye", "eye-off"]
 
 	return (
@@ -27,15 +29,12 @@ const InfoInpt = ({
 							: null,
 					},
 				]}
-				theme={{
-					colors: { primary: "green", background: "#cccccc" },
-				}}
 				mode="outlined"
 				label={label}
-				value={value}
-				disabled={isDisabled}
+				value={stateValue}
+				onKeyPress={(value) => setValue(value)}
 				secureTextEntry={secured ? isSecuredHidden : false}
-				scrollEnabled
+				disabled={isDisabled}
 			/>
 
 			{secured ? (

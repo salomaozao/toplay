@@ -3,8 +3,6 @@ import { View } from "react-native"
 import { BottomNavigation, Text } from "react-native-paper"
 import Header from "./header"
 
-const colors = ["green", "blue", "purple"]
-
 const MyComponent = (propsMain) => {
 	const [index, setIndex] = React.useState(0)
 	const [routes] = React.useState([
@@ -13,7 +11,9 @@ const MyComponent = (propsMain) => {
 		{ key: "recents", title: "Recents", icon: "history" },
 	])
 
-	const ViewCuston = (props) => (
+	const colors = ["green", "blue", "purple"]
+
+	const ViewCustom = (props) => (
 		<View style={{ marginBottom: 15 }}>
 			<Header></Header>
 			{props.children}
@@ -25,10 +25,9 @@ const MyComponent = (propsMain) => {
 			navigationState={{ index, routes }}
 			onIndexChange={setIndex}
 			renderScene={() => (
-				<ViewCuston>{propsMain.scenes[index]}</ViewCuston>
+				<ViewCustom>{propsMain.scenes[index]}</ViewCustom>
 			)}
 			barStyle={{ backgroundColor: colors[index] }}
-			
 		/>
 	)
 }

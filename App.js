@@ -1,6 +1,5 @@
-import React from "react"
+import React, { Component } from "react"
 import { DefaultTheme, Text, Provider, Colors } from "react-native-paper"
-import { lockToPortrait } from "react-native-orientation"
 
 import Control from "./pages/control/index"
 import Cadastro from "./pages/cadastro/index"
@@ -21,10 +20,16 @@ const theme = {
 	},
 }
 
-export default function App() {
-	return (
-		<Provider theme={theme}>
-			<Nav scenes={[<Acc />, <ProductView />, <Control />]} />
-		</Provider>
-	)
+export default class App extends Component {
+	// componentDidMount() {
+	// 	Orientation.getInitialOrientation()
+	// }
+
+	render() {
+		return (
+			<Provider theme={theme}>
+				<Nav scenes={[<Acc />, <ProductView />, <Control />]} />
+			</Provider>
+		)
+	}
 }

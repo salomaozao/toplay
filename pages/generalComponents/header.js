@@ -16,7 +16,7 @@ const Header = () => (
 				<Button icon="settings-helper"></Button>
 			</View>
 			<View>
-				<Text>aa</Text>
+				<Text>Toplay</Text>
 			</View>
 			<View style={styles.mr2}>
 				<Avatar.Text size={24} label="XD" />

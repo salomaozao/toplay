@@ -8,20 +8,20 @@ const ConfirmDialog = ({ action, isVisible, setVisible }) => {
 			<Dialog
 				visible={isVisible}
 				onDismiss={() => {
-					setVisible(true)
+					setVisible(false)
 				}}
 			>
-				<Dialog.Title>Tem certeza?</Dialog.Title>
+				<Dialog.Title>Marque em um dia válido!</Dialog.Title>
 				<Dialog.Actions>
 					<Button
 						onPress={() => {
-							action !== undefined ? action() : {}
+							action === undefined ? {} : action()
 							setVisible(false)
 						}}
 						style={styles.bgSecondary}
 						mode="outlined"
 					>
-						Sim, eu tenho
+						Ok, entendi
 					</Button>
 				</Dialog.Actions>
 			</Dialog>

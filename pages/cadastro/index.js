@@ -24,9 +24,7 @@ const cadastro = (props) => {
 		changeForm(showingComp.indexOf(true) + 1)
 	}
 
-	const finishForm = () => {
-		location.reload()
-	}
+	const finishForm = () => {}
 
 	const updateForm = () => {
 		if (showingComp.indexOf(true) === showingComp.length - 1) {
@@ -51,9 +49,11 @@ const cadastro = (props) => {
 					<View style={[styles.my2]}>
 						{/*todo: update colours and how they are defined*/}
 						<FormComponent
-							style={{
-								display: showingComp[0] ? "flex" : "none",
-							}}
+							// style={{
+							// 	display: showingComp[0] ? "flex" : "none",
+							// }}
+
+							display={showingComp[0]}
 							type={"input"}
 							content={[
 								{
@@ -72,9 +72,11 @@ const cadastro = (props) => {
 							]}
 						></FormComponent>
 						<FormComponent
-							style={{
-								display: showingComp[1] ? "flex" : "none",
-							}}
+							// style={{
+							// 	display: showingComp[1] ? "flex" : "none",
+							// }}
+
+							display={showingComp[1]}
 							type={"input"}
 							content={[
 								{
@@ -94,9 +96,11 @@ const cadastro = (props) => {
 							]}
 						></FormComponent>
 						<FormComponent
-							style={{
-								display: showingComp[2] ? "flex" : "none",
-							}}
+							// style={{
+							// 	display: showingComp[2] ? "flex" : "none",
+							// }}
+
+							display={showingComp[2]}
 							type={"input"}
 							content={[
 								{
@@ -114,9 +118,11 @@ const cadastro = (props) => {
 							]}
 						></FormComponent>
 						<FormComponent
-							style={{
-								display: showingComp[3] ? "flex" : "none",
-							}}
+							// style={{
+							// 	display: showingComp[3] ? "flex" : "none",
+							// }}
+
+							display={showingComp[3]}
 							type={"input"}
 							content={[
 								{
@@ -135,9 +141,11 @@ const cadastro = (props) => {
 						></FormComponent>
 
 						<FormComponent
-							style={{
-								display: showingComp[4] ? "flex" : "none",
-							}}
+							// style={{
+							// 	display: showingComp[4] ? "flex" : "none",
+							// }}
+
+							display={showingComp[4]}
 							type={"check"}
 							content={{
 								title: "hihi",

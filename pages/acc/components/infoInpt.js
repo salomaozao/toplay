@@ -32,7 +32,7 @@ const InfoInpt = ({
 				mode="outlined"
 				label={label}
 				value={stateValue}
-				onKeyPress={(value) => setValue(value)}
+				onKeyPress={(text) => setValue(text)}
 				secureTextEntry={secured ? isSecuredHidden : false}
 				disabled={isDisabled}
 			/>

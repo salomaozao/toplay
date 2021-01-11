@@ -59,9 +59,21 @@ export default class Calendar extends Component {
 					}
 					previousTitle="<"
 					onDateChange={this.onDateChange}
-					selectedDayColor={
-						this.isDayValid(startDate) ? "green" : "red"
-					}
+					disabledDates={[
+						"2021-01-01",
+						"2021-01-02",
+						"2021-01-08",
+						"2021-01-09",
+						"2021-01-15",
+						"2021-01-16",
+						"2021-01-22",
+						"2021-01-23",
+						"2021-01-29",
+						"2021-01-30",
+					]}
+					disabledDatesTextStyle={{ color: "#f2acac" }}
+					selectedDayStyle={{ backgroundColor: "#aae8a9" }}
+					
 				/>
 				{/* <Text>SELECTED DATE:{startDate}</Text> */}
 			</View>

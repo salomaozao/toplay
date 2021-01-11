@@ -58,6 +58,7 @@ const ProductView = () => {
 							style={[
 								styles.row,
 								styles.centerX,
+								styles.ml2,
 								{ position: "relative" },
 							]}
 						>
@@ -66,9 +67,7 @@ const ProductView = () => {
 								source={{ uri: "https://picsum.photos/700" }}
 								style={styles.mr2}
 							/>
-							<Text style={[styles.small, styles.textSecondary]}>
-								Nome do dono
-							</Text>
+							<Text style={[styles.small]}>Nome do dono</Text>
 						</View>
 						<View
 							style={[
@@ -122,9 +121,8 @@ const ProductView = () => {
 												style={[
 													styles.small,
 													styles.mt2,
+													styles.underline,
 													{
-														textDecorationLine:
-															"underline",
 														textAlign: "right",
 													},
 												]}

@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { View, Text, ScrollView, Dimensions } from "react-native"
-import { TextInput, Avatar, Button, DataTable } from "react-native-paper"
+import { View, ScrollView, Dimensions, FlatList } from "react-native"
+import { Avatar, Text, Button, DataTable } from "react-native-paper"
 
 import InfoInpt from "./components/infoInpt"
 import ConfirmDialog from "./components/confirmDialog"
+import InvalidDayDialog from "./components/invalidDayDialog"
 import styles from "../../styles/styles"
 
 const AccPage = () => {
@@ -16,16 +17,21 @@ const AccPage = () => {
 	}
 
 	const [showInpts, setShowInpts] = useState(true)
-	const [showDialog, setShowDialog] = useState(false)
+	const [showConfirmDialog, setShowConfirmDialog] = useState(false)
+	const [showInvalidDialog, setShowInvalidDialog] = useState(false)
 	return (
 		<>
+			<InvalidDayDialog
+				isVisible={showInvalidDialog}
+				setVisible={setShowInvalidDialog}
+			/>
 			<ConfirmDialog
-				isVisible={showDialog}
-				setVisible={setShowDialog}
+				isVisible={showConfirmDialog}
 				action={() => setShowInpts(!showInpts)}
+				setVisible={setShowConfirmDialog}
 			/>
 			<View style={[styles.bgPrimary]}>
-				<ScrollView	
+				<ScrollView
 					style={{
 						height: Dimensions.get("window").height - 90,
 					}}
@@ -44,6 +50,12 @@ const AccPage = () => {
 							</Text>
 						</View>
 					</View>
+					<Button
+						style={[styles.bgLight, styles.mx4, styles.my2]}
+						icon="calendar"
+					>
+						Agendamentos
+					</Button>
 
 					<View>
 						<Text
@@ -127,7 +139,7 @@ const AccPage = () => {
 								<Button
 									style={styles.bgSecondary}
 									onPress={() => {
-										setShowDialog(true)
+										setShowConfirmDialog(true)
 									}}
 								>
 									{showInpts === true
@@ -205,6 +217,9 @@ const AccPage = () => {
 									</DataTable.Row>
 								</DataTable>
 							</View>
+							<Text style={[styles.textCenter, styles.my2]}>
+								Fazer logout
+							</Text>
 						</View>
 					</View>
 				</ScrollView>

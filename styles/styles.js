@@ -4,7 +4,7 @@ import { Colors } from "react-native-paper"
 const styles = StyleSheet.create({
 	bgPrimary: { backgroundColor: Colors.blueGrey200 /*MUDAR COR*/ },
 
-	bgSecondary: { backgroundColor: Colors.red200 /*MUDAR COR*/ },
+	bgSecondary: { backgroundColor: Colors.blue700 /*MUDAR COR*/ },
 
 	bgLight: { backgroundColor: "white" /*MUDAR COR*/ },
 
@@ -85,11 +85,7 @@ const styles = StyleSheet.create({
 
 	row: { flexDirection: "row" },
 
-	box: {
-		height: 200,
-		width: 300,
-		padding: 5,
-	},
+	underline: { textDecorationLine: "underline" },
 })
 
 export default styles

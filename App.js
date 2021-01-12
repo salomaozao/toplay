@@ -29,7 +29,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<Provider theme={theme}>
-				<Nav scenes={[<Agendamentos />, <ProductView />, <Acc />]} />
+				<Nav scenes={[<Agendamentos />, <ProductView />, <Cadastro />]} />
 			</Provider>
 		)
 	}

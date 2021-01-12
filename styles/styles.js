@@ -2,6 +2,8 @@ import { StyleSheet } from "react-native"
 import { Colors } from "react-native-paper"
 
 const styles = StyleSheet.create({
+	footerMargin:  90 ,
+
 	bgPrimary: { backgroundColor: Colors.blueGrey200 /*MUDAR COR*/ },
 
 	bgSecondary: { backgroundColor: Colors.blue700 /*MUDAR COR*/ },

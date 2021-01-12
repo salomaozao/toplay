@@ -40,7 +40,9 @@ const AccPage = () => {
 			<View style={[styles.bgPrimary]}>
 				<ScrollView
 					style={{
-						height: Dimensions.get("window").height - 90,
+						height:
+							Dimensions.get("window").height -
+							styles.footerMargin,
 					}}
 				>
 					<View style={[styles.centerX, styles.bgDark]}>

@@ -50,9 +50,7 @@ const InfoInpt = ({
 					]}
 				>
 					<IconButton
-						icon={
-							isSecuredHidden ? deffinedIcon[1] : definedIcon[0]
-						}
+						icon={isSecuredHidden ? definedIcon[1] : definedIcon[0]}
 						onPress={() => setsecuredHidden(!isSecuredHidden)}
 						disabled={isDisabled}
 						size={20}

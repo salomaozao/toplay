@@ -1,6 +1,13 @@
 import React, { useState } from "react"
-import { View, ScrollView, Dimensions, FlatList } from "react-native"
-import { Avatar, Text, Button, DataTable } from "react-native-paper"
+import { View, ScrollView, Dimensions } from "react-native"
+import {
+	Avatar,
+	Text,
+	Button,
+	DataTable,
+	IconButton,
+	Colors,
+} from "react-native-paper"
 
 import InfoInpt from "./components/infoInpt"
 import ConfirmDialog from "./components/confirmDialog"
@@ -36,9 +43,7 @@ const AccPage = () => {
 						height: Dimensions.get("window").height - 90,
 					}}
 				>
-					<View
-						style={[styles.centerX, { backgroundColor: "#cccccc" }]}
-					>
+					<View style={[styles.centerX, styles.bgDark]}>
 						<View style={[{ height: 200 }, styles.center]}>
 							<Avatar.Text
 								size={100}
@@ -143,14 +148,15 @@ const AccPage = () => {
 									}}
 								>
 									{showInpts === true
-										? "mostrar"
-										: "esconder"}
+										? "Editar"
+										: "Confirmar"}
 								</Button>
 								<View style={styles.row}>
-									<Button
+									<IconButton
 										icon="arrow-left"
 										disabled={page === 0}
 										onPress={() => changePage(-1)}
+										size={20}
 									/>
 									<Text
 										style={{
@@ -160,10 +166,11 @@ const AccPage = () => {
 									>
 										{page + 1} de {pageMax + 1}
 									</Text>
-									<Button
+									<IconButton
 										icon="arrow-right"
 										disabled={page === pageMax}
 										onPress={() => changePage(+1)}
+										size={20}
 									/>
 								</View>
 							</View>

@@ -9,7 +9,13 @@ import styles from "../../../styles/styles"
 const formFase = ({ type, content, display, ...props }) => {
 	if (type === "input") {
 		return (
-			<View style={[styles.mx4, styles.my2,{ display: display ? "flex" : "none" }]}>
+			<View
+				style={[
+					styles.mx4,
+					styles.my2,
+					{ display: display ? "flex" : "none" },
+				]}
+			>
 				<View style={[styles.mx4, styles.my2]}>
 					<View style={[styles.centerX]}>
 						<Text style={[styles.title, styles.textCenter]}>

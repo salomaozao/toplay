@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { View, Dimensions, ScrollView } from "react-native"
-import { TextInput, Button } from "react-native-paper"
+import { View, Dimensions } from "react-native"
+import { TextInput, IconButton } from "react-native-paper"
 import styles from "../../../styles/styles"
 
 const InfoInpt = ({
@@ -49,11 +49,14 @@ const InfoInpt = ({
 						},
 					]}
 				>
-					<Button
-						icon={isSecuredHidden ? definedIcon[1] : definedIcon[0]}
+					<IconButton
+						icon={
+							isSecuredHidden ? deffinedIcon[1] : definedIcon[0]
+						}
 						onPress={() => setsecuredHidden(!isSecuredHidden)}
 						disabled={isDisabled}
-					></Button>
+						size={20}
+					></IconButton>
 				</View>
 			) : (
 				<></>

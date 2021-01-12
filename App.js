@@ -1,10 +1,12 @@
 import React, { Component } from "react"
 import { DefaultTheme, Text, Provider, Colors } from "react-native-paper"
 
+import Nav from "./pages/generalComponents/navigation"
+
+import Agendamentos from "./pages/agendamentos/index"
 import Cadastro from "./pages/cadastro/index"
 import ProductView from "./pages/productExibition"
 import Acc from "./pages/acc/index"
-import Nav from "./pages/generalComponents/navigation"
 
 const theme = {
 	...DefaultTheme,
@@ -27,7 +29,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<Provider theme={theme}>
-				<Nav scenes={[<Cadastro />, <ProductView />, <Acc />]} />
+				<Nav scenes={[<Agendamentos />, <ProductView />, <Acc />]} />
 			</Provider>
 		)
 	}

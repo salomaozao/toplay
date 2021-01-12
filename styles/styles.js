@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
 
 	bgLight: { backgroundColor: "white" /*MUDAR COR*/ },
 
+	bgDark: { backgroundColor: "#cccccc" },
+
 	p1: { padding: 4 },
 
 	py2: { paddingTop: 20 },
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
 
 	borderDark: { borderColor: "#333333" /*MUDAR COR*/ },
 
-	border: { borderWidth: 1 },
+	border: { borderWidth: 0.5 },
 
 	borderBottom: { borderBottomWidth: 1 },
 

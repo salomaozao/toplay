@@ -5,8 +5,7 @@ import {
 	Text,
 	Title,
 	Menu,
-	IconButton,
-	Divider,
+
 } from "react-native-paper"
 import styles from "../../../styles/styles"
 
@@ -89,6 +88,3 @@ const Apointments = ({ name, date, passed }) => {
 	)
 }
 export default Apointments
-{
-	/*  					*/
-}

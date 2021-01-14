@@ -6,7 +6,6 @@ import {
 	Provider as PaperProvider,
 	Colors,
 	Button,
-	BottomNavigation,
 } from "react-native-paper"
 
 import { NavigationContainer } from "@react-navigation/native"
@@ -33,13 +32,21 @@ const theme = {
 const Stack = createStackNavigator()
 
 const App = () => {
+	const [index, setIndex] = React.useState(0)
+
+	const [routes] = React.useState([
+		{ key: "music", title: "Acount", icon: "queue-music" },
+		{ key: "albums", title: "Albums", icon: "album" },
+		{ key: "recents", title: "Recents", icon: "history" },
+	])
+
 	return (
 		<NavigationContainer>
 			<PaperProvider theme={theme}>
 				<Stack.Navigator>
 					<Stack.Screen name="acc" component={Acc} />
+					<Stack.Screen name="agendamentos" component={Agendamentos} />
 				</Stack.Navigator>
-				<Button>a</Button>
 			</PaperProvider>
 		</NavigationContainer>
 	)

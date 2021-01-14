@@ -14,7 +14,7 @@ import ConfirmDialog from "./components/confirmDialog"
 import InvalidDayDialog from "./components/invalidDayDialog"
 import styles from "../../styles/styles"
 
-const AccPage = () => {
+const AccPage = ({ navigation }) => {
 	const [page, setPage] = useState(0)
 	const pageMax = 1
 	const changePage = (val) => {
@@ -40,9 +40,7 @@ const AccPage = () => {
 			<View style={[styles.bgPrimary]}>
 				<ScrollView
 					style={{
-						height:
-							Dimensions.get("window").height -
-							styles.footerMargin,
+						height: Dimensions.get("window").height,
 					}}
 				>
 					<View style={[styles.centerX, styles.bgDark]}>
@@ -60,6 +58,7 @@ const AccPage = () => {
 					<Button
 						style={[styles.bgLight, styles.mx4, styles.my2]}
 						icon="calendar"
+						onPress={() => navigation.navigate("agendamentos")}
 					>
 						Agendamentos
 					</Button>
